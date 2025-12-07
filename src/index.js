@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   form.addEventListener("submit", (event) => {
     event.preventDefault()
+    buildToDo(taskDescription.value)
+    taskDescription.value = ""
   })
 
   const taskDescription = document.getElementById("new-task-description")
@@ -11,9 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function buildToDo(taskDescription) {
     const newLi = document.createElement("li")
     newLi.textContent = taskDescription
-    task.append(newLi)
+    tasks.append(newLi)
   }
-
-  buildToDo(taskDescription)
-
 });
+
+
